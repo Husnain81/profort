@@ -1,0 +1,713 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ body {
+     margin: 0;
+     font-family: Arial, sans-serif;
+ }
+
+ .nav {
+     background-color: #F8F8FB;
+     padding: 0px 30px;
+ }
+
+ .frame {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+ }
+
+ .btns {
+     display: flex;
+     gap: 50px;
+ }
+
+ .left-strip {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     color: black;
+     padding: 10px;
+     transition: transform 0.3s ease, background 0.3s ease;
+     cursor: pointer;
+ }
+
+ .left-strip:hover {
+     background-color: #d4d4d4;
+     border-radius: 8px;
+ }
+
+ .icon {
+     font-size: 20px;
+     font-weight: bold;
+     margin-bottom: 5px;
+ }
+
+ .label {
+     font-size: 14px;
+     font-weight: 600;
+ }
+
+ .logo {
+     height: 50px;
+     
+ }
+
+ /* Hamburger Menu for Mobile */
+ .menu-toggle {
+     display: none;
+     font-size: 26px;
+     cursor: pointer;
+     color: #333;
+ }
+
+ /* Responsive Styles */
+ @media screen and (max-width: 768px) {
+     .btns {
+         display: none;
+         flex-direction: column;
+         position: absolute;
+         top: 60px;
+         right: 20px;
+         background: white;
+         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+         border-radius: 8px;
+         padding: 10px;
+     }
+
+     .btns.show {
+         display: flex;
+     }
+
+     .left-strip {
+         padding: 15px;
+         text-align: center;
+     }
+
+     .menu-toggle {
+         display: block;
+     }
+ }
+
+ .tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    /* padding: 10px 20px; */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+ .breadcrumbs {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.breadcrumb-item {
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 8px;
+    
+
+}
+
+.breadcrumb-item:hover {
+    text-decoration: none;
+    color: #50566F;
+}
+
+.breadcrumb-separator {
+    color: #666;
+    font-size: 14px;
+    margin: 0 5px;
+}
+
+.active {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Notification Icon */
+.icon-buttons {
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+    padding: 5px;
+    margin-right: 20px;
+}
+.icon-buttons:hover{
+    background-color: #d4d4d4;
+    border-radius:5px;
+    color: #50566F;
+
+}
+
+/* Profile Section */
+.profile-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.avatar {
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-info {
+    text-align: right;
+}
+
+.profile-name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.profile-role {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Profile Dropdown Arrow */
+.profile-icon i {
+    margin-left: 8px;
+    color: #333;
+}
+.profile-icon i:hover{
+    color: #50566F;
+    cursor: pointer;
+    
+}
+.frame-2{
+    display: flex;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px 20px;
+        
+    }
+
+    .breadcrumbs {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        max-width: 100%;
+        scrollbar-width: none;
+        justify-content: center;
+    }
+
+    .breadcrumb-item {
+        font-size: 16px; /* Adjust font size for smaller screens */
+        padding: 6px 12px;
+    }
+
+    .breadcrumb-separator {
+        font-size: 16px;
+        margin: 0 5px;
+    }
+
+    .frame-2 {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .profile-icon {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .avatar {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .profile-name {
+        font-size: 16px;
+    }
+
+    .profile-role {
+        font-size: 14px;
+    }
+    .container{
+        display: flex;
+    }
+}
+
+
+
+/* Main Container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Alarm on left, others on right */
+    gap: 10px;
+    padding: 10px 0px 10px 20px;
+    max-width: 100%;
+}
+
+/* Alarm Log (Left Side) */
+.alarm-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alarm-title {
+    font-size: 1rem;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    color: #101116;
+    margin-left: 10px;
+}
+
+.alarm-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #DBFFF3;
+    color: #01D992;
+    font-size: 0.75rem;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    padding: 2px 8px;
+    border-radius: 1rem;
+    min-width: 22px;
+    text-align: center;
+}
+
+/* Right Group (Calendar + Icons) */
+.right-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Calendar Container */
+.calendar-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: white;
+    border: 1px solid #DADCE4;
+    border-radius: 6px;
+    min-width: 260px;
+    flex-grow: 1;
+}
+
+.calendar-icon, .dropdown-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    color: #50566F;
+    font-size: 14px;
+}
+
+.calendar-text {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    color: #101116;
+}
+
+/* Hide the Input Field */
+.hidden-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Icon Containers (Settings & More Options) */
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 9px;
+    border-radius: 6px;
+    border: 1px solid #E9EAEF;
+    color: #50566F;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.icon-container:hover {
+    background: #f5f5f5;
+}
+
+/* Responsive Design */
+
+/* Medium screens (Tablets) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .right-group {
+        justify-content: flex-end;
+    }
+
+    .calendar-container {
+        width: auto;
+        justify-content: space-between;
+    }
+}
+
+/* Small screens (Mobile) */
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .right-group {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .calendar-container {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .calendar-text {
+        font-size: 12px;
+    }
+
+    .icon-container {
+        width: 28px;
+        height: 28px;
+        padding: 7px;
+        font-size: 12px;
+    }
+}
+
+
+/* Tab Navigation Container */
+.tab-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #E9EAEF;
+    gap: 6px;
+    padding-left: 25px;
+    flex-wrap: wrap; /* Allows tabs to wrap on smaller screens */
+}
+
+/* Individual Tabs */
+.tab {
+    padding: 8px;
+    border-radius: 8px;
+    color: #3B3F51;
+    font-size: 12px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    line-height: 16px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Active Tab Styling */
+.tab.active {
+    background: #E9EAEF;
+    color: #101116;
+}
+
+/* Tab Indicator for Active Tab */
+.tab.active .tab-indicator {
+    width: 100%;
+    height: 1.5px;
+    background: #101116;
+    border-radius: 8px;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tab-container {
+        justify-content: center; /* Center tabs on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .tab {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+/* Main Table Container */
+.status-table {
+    display: flex;
+    width: 100vw; 
+    border: 1px solid #E9EAEF;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-wrap: wrap; 
+    margin: 10px 0px 0px 25px;
+    border-radius: 10px;
+}
+
+/* Left Column  */
+.status-column {
+    width: 15%; 
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #E9EAEF;
+}
+
+/* Middle Column */
+.time-column {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #E9EAEF;
+}
+
+/* Right Column */
+.description-column {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Headers for Columns */
+.status-header,
+.column-header {
+    padding: 16px 12px;
+    background: #F8F8FB;
+    border-bottom: 1px solid #E9EAEF;
+    font-weight: 500;
+    font-size: 14px;
+    color: #101116;
+}
+
+/* Table Rows */
+.status-row,
+.time-row,
+.desc-row {
+    padding: 5px 12px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #E9EAEF;
+    background: white;
+    font-size: 14px;
+    color: #50566F;
+}
+
+/* Status Row Alignment */
+.status-row {
+    gap: 8px;
+}
+
+/* Status Indicator */
+.status-indicator {
+    width: 4px;
+    height: 100%;
+    border-radius: 4px;
+}
+
+/* Active & Inactive Colors */
+.on {
+    background: #01D992;
+}
+
+.off {
+    background: #D90105;
+}
+
+/* Responsive Design */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+    .status-table {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .status-column,
+    .time-column,
+    .description-column {
+        width: 100%;
+    }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 480px) {
+    .status-row,
+    .time-row,
+    .desc-row {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .status-indicator {
+        width: 3px;
+    }
+}
+
+
+/* Pagination Container */
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 36px;
+    padding: 8px;
+    border-radius: 6px;
+    margin: 10px 0px 0px 25px;
+    
+}
+
+/* Left Side: Results per Page */
+.results-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: #50566F;
+}
+
+/* Dropdown (Results per Page) */
+.dropdown {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: white;
+    border: 1px solid #DADCE4;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #101116;
+}
+
+.dropdown i {
+    font-size: 14px;
+    color: #50566F;
+}
+
+/* Right Side: Pagination Controls */
+.pagination-controls {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+}
+
+/* Pagination Buttons (Left & Right Arrows) */
+.pagination-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid #DADCE4;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.pagination-btn:hover {
+    background: #f5f5f5;
+}
+
+/* Page Numbers */
+.page-number {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #101116;
+    cursor: pointer;
+}
+
+.page-number.active {
+    background: rgba(5, 6, 7, 0.05);
+    border: 1px solid #CBCEDA;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pagination-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .results-info {
+        font-size: 14px;
+    }
+
+    .dropdown {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .pagination-controls {
+        gap: 6px;
+    }
+
+    .pagination-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .page-number {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
