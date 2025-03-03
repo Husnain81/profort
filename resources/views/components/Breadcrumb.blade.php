@@ -1,11 +1,6 @@
-{{-- header file --}}
-{{-- @include('partials.header') --}}
-{{-- Breadcrum tabs --}}
-
-    <div class="tabs">
-
+    <div class="d-flex justify-content-between align-items-center tabs">
         <div class="container">
-            <div class="breadcrumbs">
+            <div class="d-flex align-items-center breadcrumbs">
                 <div class="breadcrumb-item">
                     <i class="fa-solid fa-book"></i><span> Stats </span>
                 </div>
@@ -41,8 +36,8 @@
             </div>
 
             <!-- Profile Dropdown -->
-            <div class="profile-icon">
-                <div class="avatar">U</div>
+            <div class="d-flex  align-items-center profile-icon">
+                <div class="d-flex justify-content-center align-items-center avatar">U</div>
                 <div class="profile-info">
                     <div class="profile-name">User</div>
                     <div class="profile-role">Admin</div>
